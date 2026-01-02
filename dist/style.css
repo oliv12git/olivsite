@@ -29,3 +29,15 @@ p {
   opacity: 0.9;
   font-size: 1.1rem;
 }
+
+main {
+  text-align: center;
+}
+
+.portal-img {
+  margin-top: 1rem;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}

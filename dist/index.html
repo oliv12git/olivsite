@@ -8,13 +8,36 @@
 </head>
 <body>
   <header>
-    <h1>Hi i am oliv</h1>
+    <h1>Hi, I am oliv</h1>
+	<h2>I am from Finland 🇫🇮</h2>
+	<h2>I like tech and gaming</h2>
   </header>
 
-  <main>
-    <p>I like portal</p>
-    <img src="portal.jpg" alt="Portal game image">
-    <img src="portal2.jpg" alt="Portal 2 image">
-  </main>
+<hr>
+
+<main>
+  <p>I like Portal games</p>
+
+  <img src="portal.jpg" alt="Portal 1" onclick="openPopup('portal1')">
+  <img src="portal2.jpg" alt="Portal 2" onclick="openPopup('portal2')">
+  
+  <h5 onclick="openPopup('valve')" class="easter-egg">
+  pssst.. click the image
+  </h5>
+
+
+</main>
+
+<!-- POPUP -->
+<div id="popup" class="popup hidden">
+  <div class="popup-content">
+    <button class="close-btn" onclick="closePopup()">✖</button>
+    <div id="popup-text"></div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+
+
 </body>
 </html>

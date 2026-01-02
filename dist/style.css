@@ -1,3 +1,7 @@
+/* =========================
+   Base layout & typography
+   ========================= */
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
@@ -12,8 +16,13 @@ body {
 }
 
 h1 {
-  margin-bottom: 0.5rem;
-  font-size: 2.5rem;
+  font-size: 4rem; /* bigger */
+  text-align: center;
+}
+
+h2 {
+  font-size: 2rem; /* slightly smaller */
+  text-align: center;
 }
 
 p {
@@ -21,11 +30,26 @@ p {
   font-size: 1.1rem;
 }
 
+h5 {
+  margin-top: 1rem;
+  font-weight: normal;
+  opacity: 0.7;
+}
+
+
+/* =========================
+   Main content
+   ========================= */
+
 main {
   text-align: center;
 }
 
-/* 🔧 THIS CONTROLS ALL IMAGES */
+
+/* =========================
+   Images
+   ========================= */
+
 main img {
   margin-top: 1rem;
   width: 100%;
@@ -33,4 +57,85 @@ main img {
   height: auto;
   border-radius: 12px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+main img:hover {
+  transform: scale(1.05);
+}
+
+
+/* =========================
+   Popup (modal)
+   ========================= */
+
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+.popup-content {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 1.5rem 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+
+/* =========================
+   Easter egg
+   ========================= */
+
+.easter-egg {
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.easter-egg:hover {
+  opacity: 1;
+}
+
+.popup-logo {
+  margin: 1rem 0;
+  max-width: 150px;
+  width: 100%;
+  height: auto;
+}
+
+hr {
+  width: 60%;               /* length of the line */
+  margin: 2rem auto;        /* spacing above/below, centered */
+  border: 0;                /* remove default border */
+  height: 2px;              /* thickness */
+  background: rgba(255,255,255,0.5);  /* color (semi-transparent white) */
+  border-radius: 1px;       /* optional rounded ends */
 }

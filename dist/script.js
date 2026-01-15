@@ -14,7 +14,7 @@ function openPopup(game) {
     `;
   } else if (game === "valve") {
     text.innerHTML = `
-	  <h1>Give yourself a cookie, you found the easter egg!</h1>
+	  <h1>Easter egg!</h1>
       <h2>Valve Corporation</h2>
       <p>Valve is a video game developer and digital distribution company founded in 1996.</p>
       <p>They created Steam, Half-Life, Portal, and many other iconic games.</p>

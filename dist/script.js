@@ -19,10 +19,11 @@ function openPopup(game) {
       <p>Valve is a video game developer and digital distribution company founded in 1996.</p>
       <p>They created Steam, Half-Life, Portal, and many other iconic games.</p>
 	  <img src="valve.jpg" alt="Valve logo" class="popup-logo">
-	  <video width="240" height="144">
+	  <video width="240" height="144" controls>
       <source src="cpu.mp4" type="video/mp4">
       Your browser does not support the video tag.
       </video>
+
     `;
   }
 

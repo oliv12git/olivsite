@@ -33,3 +33,16 @@ function openPopup(game) {
 function closePopup() {
   document.getElementById("popup").classList.add("hidden");
 }
+
+window.addEventListener("load", function () {
+  const loader = document.getElementById("loading-screen");
+
+  setTimeout(() => {
+    loader.style.opacity = "0";
+    loader.style.transition = "opacity 0.5s";
+
+    setTimeout(() => {
+      loader.style.display = "none";
+    }, 500);
+  }, 2500);
+});

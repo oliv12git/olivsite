@@ -25,15 +25,11 @@ updateConsole();
 window.addEventListener("load", () => {
 
   const loader = document.getElementById("loading-screen");
+  const site = document.getElementById("site-content");
 
   setTimeout(() => {
-    loader.style.opacity = "0";
-    loader.style.transition = "opacity 0.5s";
-
-    setTimeout(() => {
-      loader.style.display = "none";
-    }, 500);
-
+    loader.style.display = "none";
+    site.style.opacity = "1";
   }, 3500);
 
 });

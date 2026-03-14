@@ -5,7 +5,7 @@ const messages = [
   "Loading models...",
   "Loading textures...",
   "Initializing client...",
-  "Starting game..."
+  "Starting site..."
 ];
 
 let index = 0;

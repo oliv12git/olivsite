@@ -182,16 +182,11 @@ width: 70%;
   width: 420px;
 }
 
-/* console text */
-
 .console-text {
   color: #bbb;
   font-size: 13px;
-  margin-bottom: 10px;
-  height: 20px;
+  margin-bottom: 12px;
 }
-
-/* segmented bar */
 
 .source-bar {
   width: 100%;
@@ -199,10 +194,7 @@ width: 70%;
   background: #1a1a1a;
   border: 1px solid #333;
   overflow: hidden;
-  position: relative;
 }
-
-/* progress */
 
 .source-progress {
   height: 100%;

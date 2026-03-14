@@ -5,16 +5,16 @@ const messages = [
   "Loading models...",
   "Loading textures...",
   "Initializing client...",
-  "Starting site..."
+  "Starting game..."
 ];
 
 let index = 0;
 
 function updateConsole() {
-  const consoleText = document.getElementById("console");
+  const line = document.getElementById("console-line");
 
   if (index < messages.length) {
-    consoleText.textContent = messages[index];
+    line.textContent = messages[index];
     index++;
     setTimeout(updateConsole, 500);
   }

@@ -1,64 +1,141 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oliv's Website</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.ico">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Hi, I’m oliv — a tech and gaming enthusiast from Finland. Explore my PC setup, favourite Valve games, and Steam profile.">
+    <meta name="theme-color" content="#141613">
+    <meta name="color-scheme" content="dark">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="oliv — tech &amp; gaming">
+    <meta property="og:description" content="A little corner of the internet for my setup, my favourite games, and all things tech.">
+    <title>oliv — tech &amp; gaming</title>
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main-content">Skip to content</a>
 
-  <!-- Loader -->
-  <div id="loading-screen">
-    <div class="loading-container">
-      <div class="console-text">
-        <span id="console-line">Initializing engine...</span>
-      </div>
-      <div class="source-bar">
-        <div class="source-progress">
-          <span></span><span></span><span></span><span></span><span></span>
-          <span></span><span></span><span></span><span></span><span></span>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Site content -->
-  <div id="site-content">
-    <header>
-      <h1>Hi, I am oliv</h1>
-      <h2>I am from Finland 🇫🇮</h2>
-      <h2>I like tech and gaming</h2>
-      <h2>I like Valve games very much, especially: CS2, GO, Source, 1.6, Half-Life 1 & 2, Portal 1 & 2 and TF2</h2>
+    <header class="site-header shell">
+      <a class="wordmark" href="#about" aria-label="oliv, back to introduction">oliv<span aria-hidden="true">.</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#setup">Setup</a>
+        <a href="#games">Games</a>
+      </nav>
+      <a class="header-link" href="https://github.com/oliv12git" target="_blank" rel="noopener noreferrer">
+        GitHub <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
+      </a>
     </header>
 
-    <main>
-      <div class="specs-container">
-        <div class="specs">
-          <h2>My computer specs:</h2>
-          <ul>
-            <li>Core i7‑7700K</li>
-            <li>32GB DDR4 RAM</li>
-            <li>2× 500GB SSD</li>
-            <li>ROG STRIX RTX 2080</li>
-            <li>ROG STRIX Z270H Gaming motherboard</li>
-            <li>Windows 11 IoT Enterprise 25H2 and Debian 13</li>
-          </ul>
+    <main class="shell" id="main-content" tabindex="-1">
+      <section class="hero" id="about" aria-labelledby="intro-heading">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="finland-flag" aria-hidden="true"></span> From Finland, with curiosity</p>
+          <h1 id="intro-heading">Hi, I’m <span>oliv.</span></h1>
+          <p class="hero-intro">Into tech. Into gaming.<br>Very much into Valve games.</p>
+          <p class="hero-description">Welcome to my little corner of the internet. Here’s a look at my setup and the games I keep coming back to.</p>
+          <a class="button button-primary" href="#setup">Explore my setup <span aria-hidden="true">↓</span></a>
         </div>
 
-        <div class="specs-image">
-          <a href="https://steamcommunity.com/id/oliv_steam/" target="_blank">
-            <img src="https://avatars.fastly.steamstatic.com/064b3fd1958b68e05a2783eb9ea35e0942656718_full.jpg" 
-                 alt="oliv_steam Steam profile" 
-                 id="steam-avatar">
-          </a>
-          <p id="steam-name">Steam: oliv_steam</p>
+        <aside class="profile-card" aria-labelledby="profile-heading">
+          <div class="panel-heading"><span>Player profile</span><span aria-hidden="true">01 / FI</span></div>
+          <img class="profile-cover" src="portal2.jpg" alt="Portal 2 artwork with Atlas and P-body between blue and orange portals" width="1920" height="1080" fetchpriority="high">
+          <div class="profile-details">
+            <div class="profile-identity">
+              <div class="avatar" aria-hidden="true">
+                <span>o.</span>
+                <img id="steam-avatar" src="https://avatars.fastly.steamstatic.com/064b3fd1958b68e05a2783eb9ea35e0942656718_full.jpg" alt="" width="64" height="64" decoding="async" referrerpolicy="no-referrer">
+              </div>
+              <div>
+                <p class="eyebrow">Find me on Steam</p>
+                <h2 id="profile-heading">oliv_steam</h2>
+              </div>
+            </div>
+            <a class="button button-secondary steam-link" href="https://steamcommunity.com/id/oliv_steam/" target="_blank" rel="noopener noreferrer">
+              Visit my Steam profile <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
+            </a>
+            <div class="copy-row">
+              <button class="text-button" id="copy-steam" type="button" hidden>Copy Steam name</button>
+              <span class="copy-status" id="copy-status" role="status"></span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section" id="setup" aria-labelledby="setup-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span aria-hidden="true">01 / </span>Hardware &amp; software</p>
+            <h2 id="setup-heading">The setup.</h2>
+          </div>
+          <p>The PC behind the games.</p>
         </div>
-      </div>
+        <dl class="specs-grid">
+          <div class="spec">
+            <dt>Processor <span aria-hidden="true">CPU</span></dt>
+            <dd>Intel Core i7-7700K</dd>
+          </div>
+          <div class="spec">
+            <dt>Graphics <span aria-hidden="true">GPU</span></dt>
+            <dd>ROG STRIX RTX 2080</dd>
+          </div>
+          <div class="spec">
+            <dt>Memory <span aria-hidden="true">RAM</span></dt>
+            <dd>32 GB DDR4</dd>
+          </div>
+          <div class="spec">
+            <dt>Storage <span aria-hidden="true">SSD</span></dt>
+            <dd>2 × 500 GB SSD</dd>
+          </div>
+          <div class="spec">
+            <dt>Motherboard <span aria-hidden="true">MB</span></dt>
+            <dd>ROG STRIX Z270H Gaming</dd>
+          </div>
+          <div class="spec">
+            <dt>Operating systems <span aria-hidden="true">OS</span></dt>
+            <dd class="spec-os">Windows 11 IoT Enterprise 25H2<br><span>Debian 13</span></dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section games-section" id="games" aria-labelledby="games-heading">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow"><span aria-hidden="true">02 / </span>Favourite games</p>
+            <h2 id="games-heading">A soft spot for Valve.</h2>
+          </div>
+          <p>From de_dust2 to Aperture Science.</p>
+        </div>
+        <ul class="games-grid">
+          <li class="game game-cs">
+            <span class="game-symbol" aria-hidden="true">CS</span>
+            <h3>Counter-Strike</h3>
+            <p>CS2, Global Offensive,<br>Source &amp; 1.6</p>
+          </li>
+          <li class="game game-hl">
+            <span class="game-symbol" aria-hidden="true">λ</span>
+            <h3>Half-Life</h3>
+            <p>Half-Life 1 &amp; 2</p>
+          </li>
+          <li class="game game-portal">
+            <span class="game-symbol" aria-hidden="true">&gt;_</span>
+            <h3>Portal</h3>
+            <p>Portal 1 &amp; 2</p>
+          </li>
+          <li class="game game-tf">
+            <span class="game-symbol" aria-hidden="true">TF</span>
+            <h3>Team Fortress 2</h3>
+            <p>And a Sandvich, of course.</p>
+          </li>
+        </ul>
+      </section>
     </main>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <footer class="site-footer shell">
+      <p><span class="footer-wordmark">oliv.</span> A little tech. A lot of games.</p>
+      <a href="https://github.com/oliv12git/olivsite" target="_blank" rel="noopener noreferrer">View the source <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span></a>
+    </footer>
+  </body>
 </html>

@@ -1,35 +1,39 @@
-const messages = [
-  "Initializing process...",
-  "Loading sounds...",
-  "Loading textures...",
-  "Loading Zero Point Energy Field Manipulator...",
-  "Loading Sandvich om nom nom...",
-  "Initializing Source...",
-  "Starting..."
-];
+"use strict";
 
-let index = 0;
-const line = document.getElementById("console-line");
-const totalDuration = 3500; // matches loader duration
-const interval = totalDuration / messages.length;
+// The page works without JavaScript. These are optional enhancements only.
+const avatar = document.getElementById("steam-avatar");
 
-function updateConsole() {
-  if (index < messages.length) {
-    line.textContent = messages[index];
-    index++;
-    setTimeout(updateConsole, interval);
+if (avatar) {
+  const hideBrokenAvatar = () => {
+    avatar.hidden = true;
+  };
+
+  avatar.addEventListener("error", hideBrokenAvatar, { once: true });
+
+  // A cached failure can occur before this deferred script runs.
+  if (avatar.complete && avatar.naturalWidth === 0) {
+    hideBrokenAvatar();
   }
 }
 
-updateConsole();
+const copyButton = document.getElementById("copy-steam");
+const copyStatus = document.getElementById("copy-status");
+const steamName = document.getElementById("profile-heading");
 
-window.addEventListener("load", () => {
-  const loader = document.getElementById("loading-screen");
-  const site = document.getElementById("site-content");
+if (copyButton && copyStatus && steamName && navigator.clipboard?.writeText) {
+  copyButton.hidden = false;
 
-  setTimeout(() => {
-    loader.style.opacity = "0"; // fade out
-    site.style.opacity = "1";   // fade in
-    setTimeout(() => { loader.style.display = "none"; }, 500);
-  }, totalDuration);
-});
+  copyButton.addEventListener("click", async () => {
+    copyButton.disabled = true;
+    copyStatus.textContent = "";
+
+    try {
+      await navigator.clipboard.writeText(steamName.textContent.trim());
+      copyStatus.textContent = "Copied!";
+    } catch {
+      copyStatus.textContent = "Couldn’t copy. Select the name above to copy it manually.";
+    } finally {
+      copyButton.disabled = false;
+    }
+  });
+}
